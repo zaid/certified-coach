@@ -1,0 +1,29 @@
+canada_ontario_coach_1:
+  fullname: CONC1
+  country: Canada
+  province: ON
+  postalcode: A0B 1C0
+
+canada_ontario_coach_2:
+  fullname: CONC1
+  country: Canada
+  province: ON
+  postalcode: A0B 2C0
+
+canada_bc_coach_1:
+  fullname: CBC1
+  country: Canada
+  province: BC
+  postalcode: 1C0 A0B
+
+canada_bc_coach_2:
+  fullname: CBC2
+  country: Canada
+  province: BC
+  postalcode: 1C0 A1B
+
+uk_london_coach_1:
+  fullname: ULC1
+  country: United Kingdom
+  province: Greater London
+  postalcode: EC2A 4LB
