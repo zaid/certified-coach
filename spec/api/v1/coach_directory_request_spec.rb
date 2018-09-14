@@ -13,10 +13,18 @@ RSpec.describe Api::V1::CoachDirectoryController, type: :request do
     end
 
     context "html format" do
-      it "should not be successful" do
+      it "should be successful" do
         expect do
           get '/api/v1/coach_directory'
-        end.to raise_error(ActionController::UnknownFormat)
+        end.to_not raise_error
+      end
+
+      it "should return a JSON response" do
+        get '/api/v1/coach_directory'
+        coaches = []
+
+        expect { coaches = JSON.parse(response.body) }.to_not raise_error
+        expect(coaches.size).to_not be_zero
       end
     end
 
