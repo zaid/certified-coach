@@ -50,4 +50,37 @@ RSpec.describe Coach, type: :model do
       end
     end
   end
+
+  describe "filterable methods" do
+    describe "permitted_search_params" do
+      it "should return name, country, province and postal_code" do
+        expected_result = %w(name country province  postal_code).sort
+        actual_result = Coach.permitted_search_params.sort
+
+        expect(actual_result).to eq(expected_result)
+      end
+    end
+
+    describe "search_param_scope" do
+      context "invalid filter" do
+        it "should return nil" do
+          expect(Coach.search_param_scope('userid')).to be_nil
+        end
+      end
+
+      context "valid filter" do
+        it "should return with_filter" do
+          Coach.permitted_search_params.each do |filter|
+            expect(Coach.search_param_scope(filter)).to eq("with_#{filter}")
+          end
+        end
+
+        it "should convert symbol filter names to strings" do
+          Coach.permitted_search_params.each do |filter|
+            expect(Coach.search_param_scope(filter.to_sym)).to eq("with_#{filter}")
+          end
+        end
+      end
+    end
+  end
 end
