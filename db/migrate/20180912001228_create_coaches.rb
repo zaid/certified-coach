@@ -15,7 +15,7 @@ class CreateCoaches < ActiveRecord::Migration[5.2]
       t.string :businessphone, limit: 255
       t.string :mobilephone, limit: 255
       t.string :url, limit: 255
-      t.text :speciality
+      t.text :specialty
       t.bigint :show_in_directory, default: 0
       t.bigint :level1_status, default: 0
       t.bigint :level2_status, default: 0
