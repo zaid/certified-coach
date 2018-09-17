@@ -27,3 +27,6 @@
 
 # Ignore our own database config
 config/database.yml
+
+# Ignore .ruby-version since we don't want to force a specific version.
+.ruby-version
