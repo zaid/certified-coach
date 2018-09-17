@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
+### Ruby
+You'll need a recent version of Ruby (2.3+) installed.
 
-Things you may want to cover:
+### Database
+You'll need a recent version of Postgres (9.6+) installed.
 
-* Ruby version
+## Description
 
-* System dependencies
+This is a basic coach directory listing API which supports the following filters:
+  - *country*
+  - *province*
+  - *postal_code*
+  - *name*
 
-* Configuration
+## Usage example
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+curl http://localhost:3000/api/v1/coach_directory?country=Canada&province=ON
+```
